@@ -1,10 +1,16 @@
 import "./styles.css";
 
-document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use the same configuration as Parcel to bundle this sandbox, you can find more
-  info about Parcel 
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+let h1_text = document.getElementById("text")
+let text_button = document.getElementById("my-button")
+let add_li_button = document.getElementById("add-data")
+let ulist = document.getElementById("ulist")
+let text_area = document.getElementById("textarea")
+text_button.addEventListener("click", function(){
+  console.log("hello world")
+  h1_text.innerHTML = "My notebook"
+})
+add_li_button.addEventListener("click", function(){
+  let list_item = document.createElement("li")
+  list_item.innerHTML = text_area.value
+  ulist.appendChild(list_item)
+})
